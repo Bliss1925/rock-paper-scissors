@@ -1,3 +1,32 @@
+const buttons = document.querySelectorAll("button");
+let P1 = document.querySelector(".score1");
+let C1 = document.querySelector(".score2");
+let choice;
+let cpuchoice;
+debugger;
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        choice = button.innerHTML;
+        cpuchoice = computerPlay();
+        let point = gameRound(choice, cpuchoice);
+        if (point == "Player") {
+            P1.append("|");
+        }
+        if (point == "CPU") {
+            C1.append("|");
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
 function getRandomInt() {
     return Math.floor(Math.random() * 3 + 1) //gets random int
 }
@@ -19,7 +48,7 @@ function computerPlay() {      //generates a computer option
 }
 
 
-function game() {
+/*function game() {
     let playerScore = 0;
     let computerScore = 0;
     let i = 0;
@@ -44,24 +73,19 @@ function game() {
     else {
         alert("Who likes a tie? Try again!");
         return 0;
-    }
+    }*/
 
-function gameRound() {
-    let x = prompt("Rock, Paper or Scissors?");
-    let y = computerPlay();
-    x = x.toLowerCase();
-    let roundWin = "";
-    while ( x != "rock" && x !="paper" && x !="scissors") {  //input check
-       x = prompt("That's not the game! Please input Rock, Paper or Scissors");
-}
-    switch (x) {
-        case "rock":
-            if (y == "paper") {
+function gameRound(choice, cpuchoice) {
+    let roundWin;
+    
+    switch (choice) {
+        case "Rock":
+            if (cpuchoice == "paper") {
                 console.log("You lose! Paper beats Rock!");
                 roundWin = "CPU";
                 return roundWin;
             }
-            else if (y == "scissors") {
+            else if (cpuchoice == "scissors") {
                 console.log("You win! Rock beats Scissors!");
                 roundWin = "Player";
                 return roundWin;
@@ -72,13 +96,13 @@ function gameRound() {
                 return roundWin;
             }
             break;
-        case "paper":
-            if (y == "scissors") {
+        case "Paper":
+            if (cpuchoice == "scissors") {
                 console.log("You lose! Paper beats Rock!");
                 roundWin = "CPU";
                 return roundWin;
             }
-            else if (y == "rock") {
+            else if (cpuchoice == "rock") {
                 console.log("You win! Rock beats Scissors!");
                 roundWin = "Player";
                 return roundWin;
@@ -89,13 +113,13 @@ function gameRound() {
                 return roundWin;
             }
             break;
-        case "scissors":
-            if (y == "rock") {
+        case "Scissors":
+            if (cpuchoice == "rock") {
                 console.log("You lose! Paper beats Rock!");
                 roundWin = "CPU";
                 return roundWin;
             }
-            else if (y == "paper") {
+            else if (cpuchoice == "paper") {
                 console.log("You win! Rock beats Scissors!");
                 roundWin = "Player";
                 return roundWin;
@@ -108,6 +132,6 @@ function gameRound() {
             
             }
         }
-    }
+    
 
-game();
+

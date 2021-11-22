@@ -1,0 +1,50 @@
+body {
+    max-height: 1140;
+    width: 960;
+    background-color: aqua;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 24px;
+    background: slateblue;
+    padding-top:0%;
+}
+
+.score1 {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border: 5px royalblue ;
+}
+
+.score2 {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border: 5px royalblue ;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 23%;
+    margin-top: 100px;
+}
+
+button {
+    font-weight: bold;
+    font-size: 36px;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    color: white;
+    background-color: royalblue;
+}
